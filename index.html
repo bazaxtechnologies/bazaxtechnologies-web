@@ -21,7 +21,7 @@
         }
 
         .header {
-            padding: 25px 40px;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -34,23 +34,14 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 15px;
+            height: 80px;
         }
 
         .logo-img {
-            max-width: 60px;
-            height: auto;
-        }
-
-        .logo-text {
-            font-size: 1.6rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            color: white;
-        }
-
-        .logo-text span {
-            color: #4c9aff;
+            height: 100%;
+            width: auto;
+            max-height: 80px;
+            object-fit: contain;
         }
 
         .nav-links a {
@@ -266,6 +257,9 @@
             .container {
                 padding: 20px;
             }
+            .logo-area {
+                height: 60px;
+            }
         }
     </style>
 </head>
@@ -273,8 +267,7 @@
 
 <header class="header">
     <div class="logo-area">
-        <img src="BAZAXTECHNOLOGIES_DATASCIENCEATWORK_LOGO.png" alt="BAZAXTECHNOLOGIES Logo" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/60x60?text=BAX';">
-        <div class="logo-text">BAZAX<span>TECHNOLOGIES</span></div>
+        <img src="BAZAXTECHNOLOGIES_DATASCIENCEATWORK_LOGO.png" alt="BAZAXTECHNOLOGIES Logo" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/200x80?text=BAZAX';">
     </div>
     <div class="nav-links">
         <a href="#">Home</a>
