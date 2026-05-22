@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAZAXTECHNOLOGIES</title>
+    <title>BAZAXTECHNOLOGIES | Data Science at Work</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,41 +15,378 @@
 
         body {
             background: rgba(0, 23, 71);
-            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        .header {
+            padding: 25px 40px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            font-family: Arial, sans-serif;
+            flex-wrap: wrap;
+            background: rgba(0, 15, 50, 0.7);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            max-width: 60px;
+            height: auto;
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .logo-text span {
+            color: #4c9aff;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            border-bottom: 2px solid #4c9aff;
+        }
+
+        .hero {
+            padding: 60px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 23, 71, 0.9), rgba(0, 40, 100, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #4c9aff;
+            color: #001533;
+            padding: 12px 28px;
+            margin-top: 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffb347;
+            transform: scale(1.02);
         }
 
         .container {
-            text-align: center;
+            max-width: 1300px;
+            margin: auto;
+            padding: 20px 40px;
         }
 
-        .logo {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
+        .title-center {
+            text-align: center;
+            display: block;
+            border-bottom: 3px solid #4c9aff;
+            padding-bottom: 10px;
+            width: fit-content;
+            margin: 0 auto 40px auto;
+            font-size: 2.2rem;
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(5px);
+            border-radius: 24px;
+            padding: 30px 25px;
+            width: 280px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #4c9aff;
             margin-bottom: 20px;
         }
 
-        .company-name {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #003366;
-            letter-spacing: 2px;
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
         }
 
-        .tagline {
-            font-size: 1.2rem;
-            color: #666;
-            margin-top: 10px;
+        .photo-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 50px 0;
+        }
+
+        .photo-card {
+            width: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #0a1a3a;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-card .caption {
+            padding: 15px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .news-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .news-item {
+            background: #071633;
+            border-radius: 16px;
+            padding: 20px;
+            flex: 1 1 280px;
+            border-left: 4px solid #4c9aff;
+        }
+
+        .news-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-bottom: 12px;
+        }
+
+        .org-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .org-link {
+            background: #0a1f44;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .org-link i {
+            font-size: 1.3rem;
+        }
+
+        .org-link:hover {
+            background: #4c9aff;
+            color: #001533;
+        }
+
+        .footer {
+            background: #010a1a;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e2f4b;
+        }
+
+        @media (max-width: 700px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .nav-links a {
+                margin: 0 12px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-    <img src="BAZAXTECHNOLOGIES_DATASCIENCEATWORK_LOGO.png" alt="" class="logo">     
+
+<header class="header">
+    <div class="logo-area">
+        <img src="BAZAXTECHNOLOGIES_DATASCIENCEATWORK_LOGO.png" alt="BAZAXTECHNOLOGIES Logo" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/60x60?text=BAX';">
+        <div class="logo-text">BAZAX<span>TECHNOLOGIES</span></div>
     </div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Insights</a>
+        <a href="#">Partners</a>
+        <a href="#">Contact</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container" style="padding: 20px;">
+        <h1>Data Science at Work</h1>
+        <p>We capture messy data, bring order to chaos, and uncover statistical insights that drive decisive action.</p>
+        <a href="#" class="btn">Explore our methodology <i class="fas fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<main>
+    <div class="container">
+        <h2 class="title-center">Our Core Process</h2>
+        <div class="services-grid">
+            <div class="card">
+                <i class="fas fa-database"></i>
+                <h3>Capture</h3>
+                <p>We aggregate raw data from any source — IoT, APIs, legacy systems, or spreadsheets — without losing fidelity.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-stream"></i>
+                <h3>Put in Order</h3>
+                <p>Cleaning, structuring, and harmonizing datasets to create a single source of truth for analysis.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Statistical Explanations</h3>
+                <p>From regression to Bayesian inference, we reveal the stories hidden in numbers, oriented to action.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="title-center">Data in Action — Visual Impact</h2>
+        <div class="photo-showcase">
+            <div class="photo-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Analytics Dashboard">
+                <div class="caption">Real-time dashboards that empower decisions</div>
+            </div>
+            <div class="photo-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Science Team">
+                <div class="caption">Collaborative data wrangling and statistical modeling</div>
+            </div>
+            <div class="photo-card">
+                <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Machine Learning">
+                <div class="caption">Actionable insights: from correlation to causation</div>
+            </div>
+            <div class="photo-card">
+                <img src="https://images.unsplash.com/photo-1551817958-89b9f1c72a0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Big Data">
+                <div class="caption">Order from chaos — data pipelines at scale</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="title-center">Latest News and Insights</h2>
+        <div class="news-grid">
+            <div class="news-item">
+                <h4>BAZAX launches automated statistical engine</h4>
+                <div class="news-date">May 22, 2026</div>
+                <p>New AI module reduces time from raw data to actionable reports by 70%.</p>
+            </div>
+            <div class="news-item">
+                <h4>Partnership with Open Data Institute</h4>
+                <div class="news-date">May 10, 2026</div>
+                <p>We join forces to promote ethical data usage and transparency standards.</p>
+            </div>
+            <div class="news-item">
+                <h4>Predictive maintenance for manufacturing</h4>
+                <div class="news-date">April 28, 2026</div>
+                <p>Case study: how statistical anomaly detection saved $2.1M in downtime.</p>
+            </div>
+            <div class="news-item">
+                <h4>BAZAX Data Science Fellowship 2026</h4>
+                <div class="news-date">April 15, 2026</div>
+                <p>Applications open for young statisticians and data engineers.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="title-center">Trusted Partners and Organizations</h2>
+        <div class="org-links">
+            <a href="#" class="org-link"><i class="fab fa-python"></i> PyData Global</a>
+            <a href="#" class="org-link"><i class="fas fa-chalkboard-user"></i> ASA</a>
+            <a href="#" class="org-link"><i class="fas fa-chart-pie"></i> Data Marketing Assoc.</a>
+            <a href="#" class="org-link"><i class="fas fa-cloud-arrow-up"></i> Open Data Watch</a>
+            <a href="#" class="org-link"><i class="fas fa-university"></i> IEEE Data Science</a>
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">These organizations define modern data standards — we actively collaborate and contribute.</p>
+    </div>
+
+    <div class="container" style="text-align: center; background: #0a1a3a; border-radius: 40px; padding: 40px; margin-top: 30px;">
+        <i class="fas fa-chart-simple" style="font-size: 2.5rem; color: #4c9aff;"></i>
+        <h3 style="margin: 15px 0;">Turn your data into decisive strategies</h3>
+        <p>Contact our data science team for a free statistical health check.</p>
+        <a href="#" class="btn" style="background:#ffb347; color:#001533;">Get in touch →</a>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>© 2026 BAZAXTECHNOLOGIES — Data Science at Work. All rights reserved.</p>
+    <p style="margin-top: 10px; font-size: 0.8rem;">Capture · Order · Explain to Act</p>
+</footer>
+
 </body>
 </html>
