@@ -14,87 +14,96 @@
         }
 
         body {
-            background: rgba(0, 23, 71);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #f0f0f0;
-            line-height: 1.6;
+            /* NUEVO FONDO: estilo Sherpa.ai - fondo claro/azul muy pálido */
+            background: #f5f9ff;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #1a2c3e;
+            line-height: 1.5;
         }
 
+        /* Importar fuente Inter para un look más moderno */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
         .header {
-            padding: 15px 40px;
+            padding: 20px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            background: rgba(0, 15, 50, 0.7);
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo-area {
             display: flex;
             align-items: center;
-            height: 80px;
+            height: 65px; /* Ligeramente más pequeño para un look más proporcionado */
         }
 
         .logo-img {
             height: 100%;
             width: auto;
-            max-height: 80px;
+            max-height: 65px;
             object-fit: contain;
         }
 
         .nav-links a {
-            color: #ddd;
-            margin-left: 25px;
+            color: #2c3e50;
+            margin-left: 32px;
             text-decoration: none;
             font-weight: 500;
-            transition: 0.3s;
+            font-size: 1rem;
+            transition: 0.2s;
         }
 
         .nav-links a:hover {
-            color: white;
-            border-bottom: 2px solid #4c9aff;
+            color: #0066cc;
         }
 
+        /* Estilo Hero - más limpio y con gradiente sutil */
         .hero {
-            padding: 60px 40px;
+            padding: 80px 40px;
             text-align: center;
-            background: linear-gradient(135deg, rgba(0, 23, 71, 0.9), rgba(0, 40, 100, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            border-radius: 0 0 30px 30px;
+            background: linear-gradient(135deg, #eef4ff 0%, #ffffff 100%);
             margin-bottom: 40px;
+            border-radius: 0 0 40px 40px;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 20px;
-            font-weight: 800;
+            color: #0a2540;
+            letter-spacing: -0.02em;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
+            font-size: 1.25rem;
+            max-width: 700px;
             margin: 0 auto;
-            opacity: 0.9;
+            color: #425466;
         }
 
         .btn {
             display: inline-block;
-            background: #4c9aff;
-            color: #001533;
-            padding: 12px 28px;
-            margin-top: 30px;
+            background: #0066cc;
+            color: white;
+            padding: 12px 32px;
+            margin-top: 32px;
             border-radius: 40px;
             text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
+            font-weight: 600;
+            transition: 0.2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
 
         .btn:hover {
-            background: #ffb347;
-            transform: scale(1.02);
+            background: #004999;
+            transform: translateY(-2px);
         }
 
         .container {
@@ -106,159 +115,222 @@
         .title-center {
             text-align: center;
             display: block;
-            border-bottom: 3px solid #4c9aff;
-            padding-bottom: 10px;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 12px;
             width: fit-content;
-            margin: 0 auto 40px auto;
-            font-size: 2.2rem;
+            margin: 0 auto 50px auto;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #0a2540;
         }
 
+        /* Tarjetas estilo Sherpa: fondos blancos, sombras suaves, bordes redondeados */
         .services-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 35px;
             justify-content: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(5px);
-            border-radius: 24px;
-            padding: 30px 25px;
-            width: 280px;
+            background: #ffffff;
+            backdrop-filter: none;
+            border-radius: 28px;
+            padding: 35px 28px;
+            width: 300px;
             text-align: center;
-            transition: 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.25s ease;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
         }
 
         .card i {
-            font-size: 3rem;
-            color: #4c9aff;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            color: #0066cc;
+            margin-bottom: 25px;
         }
 
         .card h3 {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             margin-bottom: 15px;
+            font-weight: 600;
+            color: #0a2540;
         }
 
+        .card p {
+            color: #425466;
+            font-size: 0.95rem;
+        }
+
+        /* Galería de fotos / tarjetas */
         .photo-showcase {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 25px;
             justify-content: center;
             margin: 50px 0;
         }
 
         .photo-card {
-            width: 300px;
-            border-radius: 20px;
+            width: 310px;
+            border-radius: 24px;
             overflow: hidden;
-            background: #0a1a3a;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background: white;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+            transition: 0.2s;
         }
-
+        .photo-card:hover {
+            transform: translateY(-4px);
+        }
         .photo-card img {
             width: 100%;
-            height: 200px;
+            height: 210px;
             object-fit: cover;
             display: block;
         }
-
         .photo-card .caption {
-            padding: 15px;
+            padding: 18px;
             font-size: 0.9rem;
             text-align: center;
+            color: #2c3e50;
+            font-weight: 500;
         }
 
+        /* Noticias: estilo más limpio */
         .news-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 25px;
-            margin-bottom: 60px;
+            gap: 30px;
+            margin-bottom: 70px;
         }
-
         .news-item {
-            background: #071633;
-            border-radius: 16px;
-            padding: 20px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 24px;
             flex: 1 1 280px;
-            border-left: 4px solid #4c9aff;
+            border-left: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            transition: 0.2s;
         }
-
+        .news-item:hover {
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+        }
         .news-item h4 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 10px;
+            font-weight: 600;
+            color: #0a2540;
         }
-
         .news-date {
-            font-size: 0.8rem;
-            color: #aaa;
+            font-size: 0.75rem;
+            color: #6c7f8f;
             margin-bottom: 12px;
         }
 
+        /* Enlaces a organizaciones: estilo minimalista */
         .org-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            margin: 40px 0;
+            gap: 20px;
+            margin: 45px 0;
         }
-
         .org-link {
-            background: #0a1f44;
-            padding: 15px 25px;
-            border-radius: 50px;
+            background: #ffffff;
+            padding: 12px 28px;
+            border-radius: 60px;
             text-decoration: none;
-            color: white;
-            font-weight: bold;
+            color: #0066cc;
+            font-weight: 600;
             transition: 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
         }
-
         .org-link i {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
+            color: #0066cc;
+        }
+        .org-link:hover {
+            background: #0066cc;
+            color: white;
+            border-color: #0066cc;
+        }
+        .org-link:hover i {
+            color: white;
         }
 
-        .org-link:hover {
-            background: #4c9aff;
-            color: #001533;
+        /* CTA final tipo Sherpa */
+        .cta-card {
+            text-align: center;
+            background: #ffffff;
+            border-radius: 48px;
+            padding: 55px 40px;
+            margin: 40px 0 20px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+            border: 1px solid #edf2f7;
+        }
+        .cta-card i {
+            font-size: 2.8rem;
+            color: #0066cc;
+        }
+        .cta-card h3 {
+            font-size: 2rem;
+            margin: 20px 0 12px;
+            color: #0a2540;
+        }
+        .btn-cta {
+            background: #f5a623;
+            color: #1a2c3e;
+            box-shadow: 0 4px 10px rgba(245,166,35,0.2);
+        }
+        .btn-cta:hover {
+            background: #e09515;
+            transform: translateY(-2px);
+            color: white;
         }
 
         .footer {
-            background: #010a1a;
+            background: #ffffff;
             text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-            font-size: 0.9rem;
-            border-top: 1px solid #1e2f4b;
+            padding: 35px;
+            margin-top: 70px;
+            font-size: 0.85rem;
+            border-top: 1px solid #eef2f6;
+            color: #5c6f87;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 750px) {
             .header {
+                padding: 15px 25px;
                 flex-direction: column;
                 gap: 15px;
-                text-align: center;
             }
             .nav-links a {
-                margin: 0 12px;
+                margin: 0 15px;
             }
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
             }
             .container {
                 padding: 20px;
             }
+            .title-center {
+                font-size: 1.6rem;
+            }
             .logo-area {
-                height: 60px;
+                height: 55px;
             }
         }
     </style>
@@ -267,7 +339,7 @@
 
 <header class="header">
     <div class="logo-area">
-        <img src="BAZAXTECHNOLOGIES_DATASCIENCEATWORK_LOGO.png" alt="BAZAXTECHNOLOGIES Logo" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/200x80?text=BAZAX';">
+        <img src="BAZAXTECHNOLOGIES_DATASCIENCEATWORK_LOGO.png" alt="BAZAXTECHNOLOGIES Logo" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/200x65?text=BAZAX';">
     </div>
     <div class="nav-links">
         <a href="#">Home</a>
@@ -317,7 +389,7 @@
             </div>
             <div class="photo-card">
                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Science Team">
-                <div class="caption">Collaborative data wrangling and statistical modeling</div>
+                <div class="caption">Collaborative data wrangling & statistical modeling</div>
             </div>
             <div class="photo-card">
                 <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Machine Learning">
@@ -331,7 +403,7 @@
     </div>
 
     <div class="container">
-        <h2 class="title-center">Latest News and Insights</h2>
+        <h2 class="title-center">Latest News & Insights</h2>
         <div class="news-grid">
             <div class="news-item">
                 <h4>BAZAX launches automated statistical engine</h4>
@@ -357,7 +429,7 @@
     </div>
 
     <div class="container">
-        <h2 class="title-center">Trusted Partners and Organizations</h2>
+        <h2 class="title-center">Trusted Partners & Organizations</h2>
         <div class="org-links">
             <a href="#" class="org-link"><i class="fab fa-python"></i> PyData Global</a>
             <a href="#" class="org-link"><i class="fas fa-chalkboard-user"></i> ASA</a>
@@ -365,20 +437,22 @@
             <a href="#" class="org-link"><i class="fas fa-cloud-arrow-up"></i> Open Data Watch</a>
             <a href="#" class="org-link"><i class="fas fa-university"></i> IEEE Data Science</a>
         </div>
-        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">These organizations define modern data standards — we actively collaborate and contribute.</p>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #5c6f87;">These organizations define modern data standards — we actively collaborate and contribute.</p>
     </div>
 
-    <div class="container" style="text-align: center; background: #0a1a3a; border-radius: 40px; padding: 40px; margin-top: 30px;">
-        <i class="fas fa-chart-simple" style="font-size: 2.5rem; color: #4c9aff;"></i>
-        <h3 style="margin: 15px 0;">Turn your data into decisive strategies</h3>
-        <p>Contact our data science team for a free statistical health check.</p>
-        <a href="#" class="btn" style="background:#ffb347; color:#001533;">Get in touch →</a>
+    <div class="container">
+        <div class="cta-card">
+            <i class="fas fa-chart-simple"></i>
+            <h3>Turn your data into decisive strategies</h3>
+            <p style="font-size: 1.05rem;">Contact our data science team for a free statistical health check.</p>
+            <a href="#" class="btn btn-cta" style="background:#f5a623; color:#1a2c3e;">Get in touch →</a>
+        </div>
     </div>
 </main>
 
 <footer class="footer">
     <p>© 2026 BAZAXTECHNOLOGIES — Data Science at Work. All rights reserved.</p>
-    <p style="margin-top: 10px; font-size: 0.8rem;">Capture · Order · Explain to Act</p>
+    <p style="margin-top: 10px; font-size: 0.75rem;">Capture · Order · Explain to Act</p>
 </footer>
 
 </body>
